@@ -2,6 +2,7 @@
 
 # History files
 .Rhistory
+.Rproj
 .Rapp.history
 
 # Session Data files
