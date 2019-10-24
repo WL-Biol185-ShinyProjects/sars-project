@@ -1,2 +1,12 @@
+#Load all libraries here
+library(shinydashboard)
 
-library(shiny)
+
+
+
+#Page Aesthetics
+dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody()
+)
