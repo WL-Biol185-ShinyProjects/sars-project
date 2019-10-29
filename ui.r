@@ -7,23 +7,32 @@ library(shinydashboard)
 #Page Aesthetics
 dashboardPage(
   dashboardHeader(title = "The 2003 SARs Epidemic"),
+  #content to put in our sidebar
   dashboardSidebar(
-    sidebarMenu(
-      menuItem("TotalCases", tabName = "totalcases", icon = icon("fas fa-book-medical", lib = "glyphicon")),
-      menuItem("Recoveries", tabName = "recoveries", icon = icon("th"))
-    )
-  ),
+      sidebarMenu(
+        menuItem("TotalCases", tabName = "totalcases", icon = icon("dashboard")),
+        menuItem("Recoveries", tabName = "recoveries", icon = icon("th"))
+      )
+    ),
+  #content to put in the body
   dashboardBody(
     tabItems(
-      
-    
-      tabItem ("totalcases",
-             h2("totalcases content"),
-             
-      tabItem(tabName = "recoveries",
-             h2("recoveries tab content")
+      # First tab content
+      tabItem(tabName = "totalcases",
+              fluidRow(
+                box(plotOutput("plot1", height = 250)),
+                
+                box(
+                  title = "Controls",
+                  sliderInput("slider", "Number of observations:", 1, 100, 50)
+          )
         )
-      )
+      ),
+      
+      # Second tab content
+      tabItem(tabName = "recoveries",
+              h2("Recoveries tab content")
+     )
     )
   )
-) 
+)
