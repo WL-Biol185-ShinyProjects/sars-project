@@ -1,8 +1,6 @@
 #Load all libraries here
+library(shiny)
 library(shinydashboard)
-
-
-
 
 #Page Aesthetics
 dashboardPage(
@@ -12,27 +10,18 @@ dashboardPage(
       sidebarMenu(
         menuItem("Introduction", tabName = "introduction", icon = icon("info-circle", lib = "font-awesome")),
         menuItem("TotalCases", tabName = "totalcases", icon = icon("dashboard")),
-        menuItem("Recoveries", tabName = "recoveries", icon = icon("th"))
-      )
-    ),
-  #content to put in the body
-    # Second tab content
-  tabItem(tabName = "introduction",
-          h2("intro tab content")
-  ),
-          
-  tabItem(tabName = "totalcases",
-            fluidRow(
-               box(plotOutput("plot1", height = 250)),
-                
-              box(
-                 title = "Controls",
-                 sliderInput("slider", "Number of observations:", 1, 100, 50)
-          )
-        )
+        menuItem("Recoveries", tabName = "recoveries", icon = icon("th"))),
       ),
-    
-      tabItem(tabName = "recoveries",
-              h2("Recoveries tab content")
-     )
-    )
+  
+  dashboardBody(
+    tabItems(
+        tabItem(tabName = "introduction",
+                h2("intro tab content")),
+        tabItem(tabName = "totalcases",
+                h2("total cases content")),
+        tabItem(tabName = "recoveries",
+                h2("recoveries content")))
+  )
+
+
+
