@@ -6,6 +6,6 @@ tidySARSdata <- read_excel("SARS data.xlsx",
                                                         "numeric", "numeric", "numeric", 
                                                         "numeric", "numeric", "numeric", 
                                                         "numeric", "numeric", "numeric", 
-                                                        "numeric", "numeric", "numeric", 
-                                                        "numeric"))
+                                                        "numeric", "numeric", "date", 
+                                                        "date"))
 View(tidySARSdata)
