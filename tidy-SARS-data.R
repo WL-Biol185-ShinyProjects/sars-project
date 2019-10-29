@@ -1,5 +1,11 @@
 library(tidyverse)
-tidySARSdata <- read.table("SARS data.xlsx",
-                           header = TRUE,
-                           na.strings = "Pending")
-tidySARSdata
+library(readxl)
+tidySARSdata <- read_excel("SARS data.xlsx", 
+                        range = "A1:Q33", col_types = c("text", 
+                                                        "numeric", "numeric", "numeric", 
+                                                        "numeric", "numeric", "numeric", 
+                                                        "numeric", "numeric", "numeric", 
+                                                        "numeric", "numeric", "numeric", 
+                                                        "numeric", "numeric", "numeric", 
+                                                        "numeric"))
+View(tidySARSdata)
