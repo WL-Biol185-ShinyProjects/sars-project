@@ -4,20 +4,6 @@ library(shinydashboard)
 library(leaflet)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Page Aesthetics
 dashboardPage(skin = "red",
   dashboardHeader(title = "The 2003 SARs Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
