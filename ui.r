@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+data(SARS_data_ll)
+     
+  leaflet(data = SARS_data_ll[1:20,]) %>% addTiles() %>%
+    
+  addMarkers(~Longitudes, ~Latitudes, popup = ~as.character(mag), label = ~as.character(mag))
+=======
 #Load all libraries here
 library(shiny)
 library(shinydashboard)
@@ -44,3 +51,4 @@ dashboardPage(skin = "red",
   )
 )
 
+>>>>>>> 461d2f67b31da80e0db0fe2898913bcf5640f0d6
