@@ -32,7 +32,7 @@ dashboardPage(skin = "red",
                                                    max = as.Date("2003-05-05", "%Y-%m-%d"),
                                                    value = as.Date("2002-11-16", "%Y-%m-%d"),
                                                    timeFormat = "%Y-%m-%d",
-                                                   animate = TRUE
+                                                   animate = TRUE)
                                                   
                                        )),
                            tabPanel("Place"))),
@@ -43,4 +43,4 @@ dashboardPage(skin = "red",
                 h2("recoveries content")))
   )
 )
-)
+
