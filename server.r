@@ -7,7 +7,7 @@ function(input, output, session) {
     lats <- -90:90
     lons <- -180:180
     
-    output$worldMap <- renderLeaflet({
+    output$timeMap <- renderLeaflet({
       
       leaflet() %>% 
         setView(lng = 0, lat = 10, zoom = 2) %>% 
@@ -15,8 +15,3 @@ function(input, output, session) {
     })
     
 }
-#function(input, output) {
- # output$worldMap <- renderPrint(
-  #  {input$dateSlider}
-  #)
-#}
