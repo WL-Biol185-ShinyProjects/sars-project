@@ -12,6 +12,7 @@ function(input, output, session) {
       leaflet() %>% 
         setView(lng = 0, lat = 10, zoom = 2) %>% 
         addTiles()
+      worldMap$
     })
     
   }

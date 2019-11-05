@@ -25,7 +25,16 @@ dashboardPage(skin = "red",
                 navbarPage("Time and Place of the Epidemic",
                            tabPanel("Time",
                                     fluidRow(
-                                       (leafletOutput("worldMap", height = 400, width = 700)))),
+                                       (leafletOutput("worldMap", height = 400, width = 700)),
+                                       sliderInput("dateSlider", 
+                                                   label = "Date", 
+                                                   min = as.Date("2002-11-16", "%Y-%m-%d"),
+                                                   max = as.Date("2003-05-05", "%Y-%m-%d"),
+                                                   value = as.Date("2002-11-16", "%Y-%m-%d"),
+                                                   timeFormat = "%Y-%m-%d",
+                                                   animate = TRUE
+                                                  
+                                       )),
                            tabPanel("Place"))),
         
         tabItem(tabName = "totalcases",
@@ -34,4 +43,4 @@ dashboardPage(skin = "red",
                 h2("recoveries content")))
   )
 )
-
+)
