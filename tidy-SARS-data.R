@@ -8,4 +8,5 @@ tidySARSdata <- read_excel("SARS data.xlsx",
                                                         "numeric", "numeric", "numeric", 
                                                         "numeric", "numeric", "date", 
                                                         "date"))
+names(tidySARSdata) <- c("country", "female", "male", "total", "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", "casesRecovered", "deaths", "caseFatalityRate", "importedCases", "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
 View(tidySARSdata)
