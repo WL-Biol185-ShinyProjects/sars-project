@@ -12,28 +12,11 @@ function(input, output, session) {
   observe({
     # note the dummy use of the action button input
     btn <- input$newButton
-    
-<<<<<<< HEAD
+
     leafletProxy("worldMap") %>%
       setView(lng = sample(lons, 1), lat = sample(lats, 1), zoom = 5)
   })
   
 }
-=======
-    lats <- -90:90
-    lons <- -180:180
-    
-    output$worldMap <- renderLeaflet({
-      
-      leaflet() %>% 
-        setView(lng = 0, lat = 10, zoom = 2) %>% 
-        addTiles()
-    })
-    
-}
-#function(input, output) {
- # output$worldMap <- renderPrint(
-  #  {input$dateSlider}
-  #)
-#}
->>>>>>> 461d2f67b31da80e0db0fe2898913bcf5640f0d6
+
+  
