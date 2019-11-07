@@ -12,5 +12,3 @@ function(input, output, session) {
       addMarkers(~longitude, ~latitude)
   })
 }
-
-
