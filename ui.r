@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9dc4341a1095419fa467d926c07e2d75b12c5ea2
 #Load all libraries here
 library(shiny)
 library(shinydashboard)
@@ -26,7 +29,7 @@ dashboardPage(skin = "red",
                 navbarPage("Time and Place of the Epidemic",
                            tabPanel("Time",
                                     fluidRow(
-                                       (leafletOutput("worldMap", height = 400, width = 700)),
+                                       (leafletOutput("timeMap", height = 400, width = 700)),
                                        sliderInput("dateSlider", 
                                                    label = "Date", 
                                                    min = as.Date("2002-11-16", "%Y-%m-%d"),
@@ -45,4 +48,7 @@ dashboardPage(skin = "red",
   )
 )
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9dc4341a1095419fa467d926c07e2d75b12c5ea2
