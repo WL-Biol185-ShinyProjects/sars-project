@@ -2,7 +2,6 @@ function(input, output, session) {
   
   lats <- -90:90
   lons <- -180:180
-<<<<<<< HEAD
   
   output$worldMap <- renderLeaflet({
     leaflet() %>% 
@@ -21,15 +20,3 @@ function(input, output, session) {
 }
 
   
-=======
-    
-  output$timeMap <- renderLeaflet({
-    leaflet(data = tidySARSdata) %>% 
-      setView(lng = 0, lat = 10, zoom = 2) %>% 
-      addTiles() %>% 
-      addMarkers(~longitude, ~latitude)
-    })
-    
-}
-
->>>>>>> 9dc4341a1095419fa467d926c07e2d75b12c5ea2
