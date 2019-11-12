@@ -7,7 +7,7 @@ function(input, output, session) {
     tidySARSdata %>% 
       filter(firstOnset <= input$dateSlider) %>% 
       leaflet() %>% 
-      setView(lng = 0, lat = 10, zoom = 2) %>% 
+      setView(lng = 10, lat = 20, zoom = 1.5) %>% 
       addTiles() %>% 
       addMarkers(~longitude, ~latitude)
   })
