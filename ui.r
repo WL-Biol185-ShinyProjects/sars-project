@@ -18,7 +18,6 @@ names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "to
 View(tidySARSdata)
 
 library(htmltools)
-library(leaflet)
 
 
 #Data Frame for Place Map
@@ -66,8 +65,7 @@ dashboardPage(skin = "red",
         menuItem("Introduction", tabName = "introduction", icon = icon("info-circle", lib = "font-awesome")),
         menuItem("Time and Place", tabName = "timeandplace", icon = icon ("map-marked-alt", lib = "font-awesome")),
         menuItem("TotalCases", tabName = "totalcases", icon = icon("list-ol", lib = "font-awesome")),
-        menuItem("Recoveries", tabName = "recoveries", icon = icon("clinic-medical", lib = "font-awesome")))
-      ),
+        menuItem("Recoveries", tabName = "recoveries", icon = icon("clinic-medical", lib = "font-awesome")))),
   
   dashboardBody(
     tabItems(
