@@ -36,6 +36,15 @@ dashboardPage(skin = "red",
               )
 )
 
+
+
+#Code for basic mouse over map
+data(SARS_data_ll)
+
+leaflet(data = SARS_data_ll[1:32,]) %>% addTiles() %>%
+  
+  addMarkers(~Longitudes, ~Latitudes, popup = ~as.character(Total), label = ~as.character(Areas))
+
 #code for server aesthestics#this is where our server code goes
 library(shiny)
 library(leaflet)

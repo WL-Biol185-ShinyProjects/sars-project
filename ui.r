@@ -6,6 +6,8 @@ library(leaflet)
 library(htmltools)
 library(leaflet)
 
+
+#Data Frame for Place Map
 SARS_data_ll <- data.frame(
   lat = c(-25.274398, -14.235004, 56.130366	, 35.861660 , 22.396428, 22.198745, 23.697810, 4.570868, 
           61.924110, 46.227638, 51.165691, 20.593684,-0.789275, 41.871940, 29.311660, 4.210484, 46.862496,
@@ -31,6 +33,15 @@ SARS_data_ll <- data.frame(
 )
 
 SARS_data_ll$popupText <- paste(strong("Area:"), SARS_data_ll$Areas, br(), strong("Total Cases:"), SARS_data_ll$Total, br(), strong("Total Deaths:"), SARS_data_ll$NumberofDeaths)
+
+
+
+
+
+
+
+
+
 
 #Page Aesthetics
 dashboardPage(skin = "red",
@@ -68,8 +79,9 @@ dashboardPage(skin = "red",
                                       addTiles() %>% 
                                       addMarkers(popup = ~popupText)))),
         
-        tabItem(tabName = "totalcases",
-                h2("total cases content")),
+        tabItem(tabName = "totaldeaths",
+                h2("total deaths graph")),
+        
         tabItem(tabName = "recoveries",
                 h2("recoveries content")))
   )
