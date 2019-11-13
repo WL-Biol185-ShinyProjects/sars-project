@@ -18,6 +18,7 @@ names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "to
                          casesRecovered", "deaths", "caseFatalityRate", "importedCases", 
                          "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
 HDI2003 <- read_csv("HDI2003.csv", col_names = TRUE)
+<<<<<<< HEAD
 add_case(HDI2003, Country = c("Macao, China (SAR)", "Taiwan, China (SAR)"), HDI = c("N/A", "N/A"))
 
 HDI2003<-filter(HDI2003, Country == c("Australia", "Brazil", "Canada", "China", "Hong Kong, China (SAR)",
@@ -28,6 +29,18 @@ HDI2003<-filter(HDI2003, Country == c("Australia", "Brazil", "Canada", "China", 
                                       "Spain", "Sweden", "Switzerland", "Thailand", "United Kingdom", "United States", "Viet Nam"))                  
 
 
+=======
+                    add_case(HDI2003, Country = c("Macao, China (SAR)", "Taiwan, China (SAR)"), HDI = c("N/A", "N/A"))
+
+HDI2003<-filter(HDI2003, Country == c("Australia", "Brazil", "Canada", "China", "Hong Kong, China (SAR)",
+                            "Macao, China (SAR)", "Taiwan, China (SAR)", "Colombia", "Finland", 
+                            "France", "Germany", "India", "Indonesia", "Italy", "Kuwait", 
+                            "Malaysia", "Mongolia", "New Zealand", "Philippines", "Ireland", 
+                            "Korea (Republic of)", "Romania", "Russian Federation", "Singapore", "South Africa",
+                            "Spain", "Sweden", "Switzerland", "Thailand", "United Kingdom", "United States", "Viet Nam"))                  
+
+                           
+>>>>>>> df7165063efb137a29464ea924877d3a19f39519
 View(HDI2003)
 View(tidySARSdata)
 
