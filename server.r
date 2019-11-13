@@ -11,4 +11,11 @@ function(input, output, session) {
       addTiles() %>% 
       addMarkers(~longitude, ~latitude)
   })
+  
+  output$sexPlot <- renderPlot({
+    barplot(SARS_data_ll[,input$Areas]*1000,
+            main=input$Areas,
+            ylab = "Number of Cases",
+            xlab = "Group")
+  })
 }

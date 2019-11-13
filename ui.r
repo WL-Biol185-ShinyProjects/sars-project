@@ -68,7 +68,7 @@ dashboardPage(skin = "red",
                                sidebarMenu(
                                  menuItem("Introduction", tabName = "introduction", icon = icon("info-circle", lib = "font-awesome")),
                                  menuItem("Time and Place", tabName = "timeandplace", icon = icon ("map-marked-alt", lib = "font-awesome")),
-                                 menuItem("TotalCases", tabName = "totalcases", icon = icon("list-ol", lib = "font-awesome")),
+                                 menuItem("Case by Sex", tabName = "casebysex", icon = icon("list-ol", lib = "font-awesome")),
                                  menuItem("Recoveries", tabName = "recoveries", icon = icon("clinic-medical", lib = "font-awesome")))
               ),
               
@@ -97,9 +97,20 @@ dashboardPage(skin = "red",
                                                 addTiles() %>% 
                                                 addMarkers(popup = ~popupText)))),
                   
-                  tabItem(tabName = "totalcases",
-                          h2("total cases content")),
+                  tabItem(tabName = "casebysex",
+                          fluidPage(
+                            titlePanel("case by sex histograms"),
+                            sidebarLayout(
+                              sidebarPanel(
+                                selectInput("region", "Region:",
+                                            choices = colnames(SARS_data_ll))),
+                              mainPanel(
+                                plotOutput("sexPlot")
+                              )
+                              
+                            )
+                          )
+                  )),
                   tabItem(tabName = "recoveries",
                           h2("recoveries content")))
               )
-)
