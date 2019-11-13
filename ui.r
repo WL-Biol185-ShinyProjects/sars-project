@@ -1,4 +1,3 @@
-
 #Load all libraries here
 library(shiny)
 library(shinydashboard)
@@ -14,13 +13,27 @@ tidySARSdata <- read_excel("SARS data ll.xlsx",
                                                            "numeric", "numeric", "numeric", 
                                                            "numeric", "numeric", "date", 
                                                            "date"))
-names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "total", "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", "casesRecovered", "deaths", "caseFatalityRate", "importedCases", "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
+names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "total", 
+                         "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", "
+                         casesRecovered", "deaths", "caseFatalityRate", "importedCases", 
+                         "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
+HDI2003 <- read_csv("HDI2003.csv", col_names = TRUE)
+add_case(HDI2003, Country = c("Macao, China (SAR)", "Taiwan, China (SAR)"), HDI = c("N/A", "N/A"))
+
+HDI2003<-filter(HDI2003, Country == c("Australia", "Brazil", "Canada", "China", "Hong Kong, China (SAR)",
+                                      "Macao, China (SAR)", "Taiwan, China (SAR)", "Colombia", "Finland", 
+                                      "France", "Germany", "India", "Indonesia", "Italy", "Kuwait", 
+                                      "Malaysia", "Mongolia", "New Zealand", "Philippines", "Ireland", 
+                                      "Korea (Republic of)", "Romania", "Russian Federation", "Singapore", "South Africa",
+                                      "Spain", "Sweden", "Switzerland", "Thailand", "United Kingdom", "United States", "Viet Nam"))                  
+
+
+View(HDI2003)
 View(tidySARSdata)
 
 library(htmltools)
+library(leaflet)
 
-
-#Data Frame for Place Map
 SARS_data_ll <- data.frame(
   lat = c(-25.274398, -14.235004, 56.130366	, 35.861660 , 22.396428, 22.198745, 23.697810, 4.570868, 
           61.924110, 46.227638, 51.165691, 20.593684,-0.789275, 41.871940, 29.311660, 4.210484, 46.862496,
@@ -47,56 +60,46 @@ SARS_data_ll <- data.frame(
 
 SARS_data_ll$popupText <- paste(strong("Area:"), SARS_data_ll$Areas, br(), strong("Total Cases:"), SARS_data_ll$Total, br(), strong("Total Deaths:"), SARS_data_ll$NumberofDeaths)
 
-
-
-
-
-
-
-
-
-
 #Page Aesthetics
 dashboardPage(skin = "red",
-  dashboardHeader(title = "The 2003 SARs Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
-  #content to put in our sidebar
-  dashboardSidebar(width = 200,
-      sidebarMenu(
-        menuItem("Introduction", tabName = "introduction", icon = icon("info-circle", lib = "font-awesome")),
-        menuItem("Time and Place", tabName = "timeandplace", icon = icon ("map-marked-alt", lib = "font-awesome")),
-        menuItem("TotalCases", tabName = "totalcases", icon = icon("list-ol", lib = "font-awesome")),
-        menuItem("Recoveries", tabName = "recoveries", icon = icon("clinic-medical", lib = "font-awesome")))),
-  
-  dashboardBody(
-    tabItems(
-        tabItem(tabName = "introduction",
-                h2("place introductory elements here")),
-        
-        tabItem(tabName = "timeandplace",
-                navbarPage("Time and Place of the Epidemic",
-                           tabPanel("Time",
-                                    fluidRow(
-                                       (leafletOutput("timeMap", height = 455, width = 1000)),
-                                       sliderInput("dateSlider", 
-                                                   label = "Date", 
-                                                   min = as.Date("2002-11-16", "%Y-%m-%d"),
-                                                   max = as.Date("2003-05-05", "%Y-%m-%d"),
-                                                   value = as.Date("2002-11-16", "%Y-%m-%d"),
-                                                   timeFormat = "%Y-%m-%d",
-                                                   animate = TRUE,
-                                                   step = 7)
-                                                  
-                                       )),
-                           tabPanel("Place",
-                                    leaflet(data = SARS_data_ll) %>% 
-                                      addTiles() %>% 
-                                      addMarkers(popup = ~popupText)))),
-        
-        tabItem(tabName = "totaldeaths",
-                h2("total deaths graph")),
-        
-        tabItem(tabName = "recoveries",
-                h2("recoveries content")))
-  )
+              dashboardHeader(title = "The 2003 SARs Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
+              #content to put in our sidebar
+              dashboardSidebar(width = 200,
+                               sidebarMenu(
+                                 menuItem("Introduction", tabName = "introduction", icon = icon("info-circle", lib = "font-awesome")),
+                                 menuItem("Time and Place", tabName = "timeandplace", icon = icon ("map-marked-alt", lib = "font-awesome")),
+                                 menuItem("TotalCases", tabName = "totalcases", icon = icon("list-ol", lib = "font-awesome")),
+                                 menuItem("Recoveries", tabName = "recoveries", icon = icon("clinic-medical", lib = "font-awesome")))
+              ),
+              
+              dashboardBody(
+                tabItems(
+                  tabItem(tabName = "introduction",
+                          h2("place introductory elements here")),
+                  
+                  tabItem(tabName = "timeandplace",
+                          navbarPage("Time and Place of the Epidemic",
+                                     tabPanel("Time",
+                                              fluidRow(
+                                                (leafletOutput("timeMap", height = 455, width = 1000)),
+                                                sliderInput("dateSlider", 
+                                                            label = "Date", 
+                                                            min = as.Date("2002-11-16", "%Y-%m-%d"),
+                                                            max = as.Date("2003-05-05", "%Y-%m-%d"),
+                                                            value = as.Date("2002-11-16", "%Y-%m-%d"),
+                                                            timeFormat = "%Y-%m-%d",
+                                                            animate = TRUE,
+                                                            step = 7)
+                                                
+                                              )),
+                                     tabPanel("Place",
+                                              leaflet(data = SARS_data_ll) %>% 
+                                                addTiles() %>% 
+                                                addMarkers(popup = ~popupText)))),
+                  
+                  tabItem(tabName = "totalcases",
+                          h2("total cases content")),
+                  tabItem(tabName = "recoveries",
+                          h2("recoveries content")))
+              )
 )
-

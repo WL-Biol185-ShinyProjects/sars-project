@@ -2,7 +2,7 @@ function(input, output, session) {
   
   lats <- -90:90
   lons <- -180:180
-    
+  
   output$timeMap <- renderLeaflet({
     tidySARSdata %>% 
       filter(firstOnset <= input$dateSlider) %>% 
