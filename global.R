@@ -73,6 +73,3 @@ tidySARSdata$continent <- c("Oceania", "South America", "North America", "Asia",
                             "North America", "Asia")
 View(tidySARSdata)
 
-
-#Data Frame for Gender
-SARS_data <- SARS_data[-c(33), ]
