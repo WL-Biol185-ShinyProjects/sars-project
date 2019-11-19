@@ -13,6 +13,8 @@ function(input, output, session) {
   })
   
   output$sexPlot <- renderPlot({
+    gendertidySARSdata %>%
+    filter('Areas' == gendertidySARSdata$areas) %>%
     ggplot(gendertidySARSdata, aes(Gender, Incidence)) +
       geom_bar(stat = 'identity')+
       theme(axis.text.x = element_text(angle = 0, hjust = 1))
