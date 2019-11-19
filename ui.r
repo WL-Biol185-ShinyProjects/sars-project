@@ -64,21 +64,11 @@ dashboardPage(skin = "red",
                           )
                   )),
                 tabItem(tabName = "caseByHDI",
-                        tabPanel("Cases and Deaths by Human Development Index",
-                                 fluidPage(
-                                   titlePanel("Total Cases and Deaths by Human Development Index"),
-                                   mainPanel(
-                                     plotOutput("HDIplot")),
-                                   sidebarLayout(
-                                     sidebarPanel(
-                                       selectInput("HDIquart", "HDI Quartile",
-                                                   cchoices = tidySARSdata$HDIquart)
-                                     )
-                                   )
-                                   )
-                                 ))),
+                        tabPanel("Cases and Deaths by Human Development Index"),
               
                 tabItem(tabName = "recoveries",
                         h2("recoveries content"))
-
+)
+)
+)
 
