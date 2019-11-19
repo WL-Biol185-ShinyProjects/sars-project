@@ -65,6 +65,12 @@ View(HDIsars2003)
 
 tidySARSdata$HDI <- HDIsars2003$HDI
 tidySARSdata$HDIquart <- HDIsars2003$HDIquartile
+tidySARSdata$continent <- c("Oceania", "South America", "North America", "Asia", "Asia", 
+                            "Asia", "Asia", "South America", "Europe", "Europe", 
+                            "Europe", "Asia", "Asia", "Europe", "Asia", "Asia", "Asia", "Oceania",
+                            "Asia", "Europe", "Asia", "Europe", "Asia", 
+                            "Asia", "Africa", "Europe", "Europe", "Europe", "Asia", "Europe",
+                            "North America", "Asia")
 View(tidySARSdata)
 
 
