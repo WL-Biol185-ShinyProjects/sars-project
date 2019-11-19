@@ -7,6 +7,7 @@ library(stringr)
 library(htmltools)
 library(leaflet)
 library(readr)
+
 #Data Frame for Place Map
 SARS_data_ll <- data.frame(
   lat = c(-25.274398, -14.235004, 56.130366	, 35.861660 , 22.396428, 22.198745, 23.697810, 4.570868, 
