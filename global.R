@@ -1,12 +1,12 @@
 library(shiny)
 library(shinydashboard)
 library(leaflet)
-
 library(tidyverse)
 library(readxl)
+library(stringr)
 library(htmltools)
 library(leaflet)
-
+library(readr)
 SARS_data_ll <- data.frame(
   lat = c(-25.274398, -14.235004, 56.130366	, 35.861660 , 22.396428, 22.198745, 23.697810, 4.570868, 
           61.924110, 46.227638, 51.165691, 20.593684,-0.789275, 41.871940, 29.311660, 4.210484, 46.862496,
@@ -45,3 +45,17 @@ names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "to
                          "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", "
                          casesRecovered", "deaths", "caseFatalityRate", "importedCases", 
                          "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
+HDI2003 <- read_csv("HDI2003.csv", col_types = cols(HDI = col_number()))
+summary(HDI2003)
+#1Q = 0.2660-0.4900 #2Q = 0.4900-0.6805 #3Q 0.6805-0.7755 #4Q 0.7755-0.9240
+HDI2003 <- add_case(HDI2003, Country = c("China, Macao Special Administrative Region", "China, Taiwan Special Administrative Region"), HDI = c("NA", "NA"))
+HDI2003$Country[75] <- "China, Hong Kong Special Administrative Region"
+HDI2003$Country[83] <- "Republic of Ireland"
+HDI2003$Country[91] <- "Republic of Korea"
+HDI2003$Country[186] <- "Vietnam"
+View(HDI2003)
+HDIsars2003 <- HDI2003 %>% 
+  slice(9, 24, 32, 36, 75, 196, 197, 37, 60, 61, 65, 78, 79, 84, 92, 105, 115, 123, 136, 83, 91, 140, 141, 153, 157, 159, 163, 164, 168, 180, 181, 186)
+HDIsars2003$HDIquartile <- c("1st", "3rd", "4th", "2nd", "4th", "NA", "NA", "2nd", "4th", "4th", "4th", "2nd", "2nd", "4th", "4th", "3rd", "2nd", "4th", 
+                             "2nd", "4th", "4th", "3rd", "3rd", "4th", "2nd", "4th", "4th", "4th", "2nd", "4th", "4th", "2nd")
+View(HDIsars2003)
