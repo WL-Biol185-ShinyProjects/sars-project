@@ -17,6 +17,7 @@ dashboardPage(skin = "red",
                                  menuItem("Introduction", tabName = "introduction", icon = icon("info-circle", lib = "font-awesome")),
                                  menuItem("Time and Place", tabName = "timeandplace", icon = icon ("map-marked-alt", lib = "font-awesome")),
                                  menuItem("Case by Sex", tabName = "casebysex", icon = icon("list-ol", lib = "font-awesome")),
+                                 menuItem("Case by HDI", tabName = "caseByHDI", icon = icon("user-friends", lib = "font-awesome")),
                                  menuItem("Recoveries", tabName = "recoveries", icon = icon("clinic-medical", lib = "font-awesome")))
               ),
               
@@ -61,7 +62,20 @@ dashboardPage(skin = "red",
                             )
                           )
                   )),
+                tabItem(tabName = "caseByHDI",
+                        tabPanel("Cases and Deaths by Human Development Index",
+                                 fluidPage(
+                                   titlePanel("Total Cases and Deaths by Human Development Index"),
+                                   mainPanel(
+                                     plotOutput("HDIplot")),
+                                   sidebarLayout(
+                                     sidebarPanel(
+                                       selectInput("HDIquart", "HDI Quartile",
+                                                   cchoices = tidySARSdata$HDIquart)
+                                     )
+                                   )
+                                   )
+                                 ))),
                 
                 tabItem(tabName = "recoveries",
-                        h2("recoveries content")))
-)
+                        h2 ("recoveries content"))
