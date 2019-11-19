@@ -42,6 +42,7 @@ dashboardPage(skin = "red",
                                                             step = 7)
                                                 
                                               )),
+                                     
                                      tabPanel("Place",
                                               leaflet(data = SARS_data_ll) %>% 
                                                 addTiles() %>% 
@@ -60,8 +61,7 @@ dashboardPage(skin = "red",
                               
                             )
                           )
-                  )),
-                
-                tabItem(tabName = "recoveries",
+                  ),
+                  tabItem(tabName = "recoveries",
                         h2("recoveries content")))
-)
+))
