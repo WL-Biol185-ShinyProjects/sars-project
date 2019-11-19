@@ -20,7 +20,7 @@ dashboardPage(skin = "red",
                                  menuItem("Case by HDI", tabName = "caseByHDI", icon = icon("user-friends", lib = "font-awesome")),
                                  menuItem("Recoveries", tabName = "recoveries", icon = icon("clinic-medical", lib = "font-awesome")))
               ),
-              
+              #content to put in our main body
               dashboardBody(
                 
                 tabItems(
@@ -41,13 +41,17 @@ dashboardPage(skin = "red",
                                                             timeFormat = "%Y-%m-%d",
                                                             animate = TRUE,
                                                             step = 7)
-                                                
-                                              )),
+                                              )
+                                     ),
+                                             
                                      
                                      tabPanel("Place",
                                               leaflet(data = SARS_data_ll) %>% 
                                                 addTiles() %>% 
-                                                addMarkers(popup = ~popupText)))),
+                                                addMarkers(popup = ~popupText)
+                                              )
+                                     )
+                          ),
                   
                   tabItem(tabName = "casebysex",
                           fluidPage(
@@ -56,17 +60,24 @@ dashboardPage(skin = "red",
                               sidebarPanel(
                                 selectInput("region", "Region:",
                                             choices = sort(unique(gendertidySARSdata$areas)),
+                                            selected = 1)
+                                ),
                               mainPanel(
                                 plotOutput("sexPlot")
                               )
-                              
                             )
                           )
-                  ))),
+                  ),
+                  
                   tabItem(tabName = "caseByHDI",
-                          tabPanel("Cases and Deaths by Human Development Index"),
-                          tabItem(tabName = "recoveries",
-                                  h2("recoveries content"))
-                  ))))
-
+                          h2("Cases and Deaths by Human Development Index")
+                          ),
+                
+                  tabItem(tabName = "recoveries",
+                          h2("recoveries content")
+                          )
+                )
+              )
+)
+  
   
