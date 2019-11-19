@@ -7,7 +7,7 @@ library(readxl)
 library(htmltools)
 library(leaflet)
 
-SARS_data <- SARS_data[-c(33), ]
+
 #Page Aesthetics
 dashboardPage(skin = "red",
               dashboardHeader(title = "The 2003 SARs Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
@@ -21,7 +21,9 @@ dashboardPage(skin = "red",
               ),
               
               dashboardBody(
+                
                 tabItems(
+                  
                   tabItem(tabName = "introduction",
                           h2("place introductory elements here")),
                   
@@ -51,7 +53,7 @@ dashboardPage(skin = "red",
                             sidebarLayout(
                               sidebarPanel(
                                 selectInput("region", "Region:",
-                                            choices = SARS_data$Areas)),
+                                            choices = tidySARSdata$areas)),
                               mainPanel(
                                 plotOutput("sexPlot")
                               )
@@ -59,6 +61,7 @@ dashboardPage(skin = "red",
                             )
                           )
                   )),
+                
                 tabItem(tabName = "recoveries",
                         h2("recoveries content")))
 )

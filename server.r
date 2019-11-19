@@ -13,9 +13,6 @@ function(input, output, session) {
   })
   
   output$sexPlot <- renderPlot({
-    barplot(SARS_data_ll[,input$Areas]*1000,
-            main=input$Areas,
-            ylab = "Number of Cases",
-            xlab = "Group")
+
   })
 }
