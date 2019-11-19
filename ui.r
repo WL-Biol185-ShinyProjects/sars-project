@@ -59,6 +59,6 @@ dashboardPage(skin = "red",
                             )
                           )
                   )),
-                  tabItem(tabName = "recoveries",
-                          h2("recoveries content")))
-              )
+                tabItem(tabName = "recoveries",
+                        h2("recoveries content")))
+)
