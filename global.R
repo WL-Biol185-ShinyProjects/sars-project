@@ -59,3 +59,6 @@ HDIsars2003 <- HDI2003 %>%
 HDIsars2003$HDIquartile <- c("1st", "3rd", "4th", "2nd", "4th", "NA", "NA", "2nd", "4th", "4th", "4th", "2nd", "2nd", "4th", "4th", "3rd", "2nd", "4th", 
                              "2nd", "4th", "4th", "3rd", "3rd", "4th", "2nd", "4th", "4th", "4th", "2nd", "4th", "4th", "2nd")
 View(HDIsars2003)
+tidySARSdata$HDI <- HDIsars2003$HDI
+tidySARSdata$HDIquart <- HDIsars2003$HDIquartile
+View(tidySARSdata)
