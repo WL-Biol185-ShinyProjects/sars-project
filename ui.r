@@ -25,8 +25,7 @@ dashboardPage(skin = "red",
                 
                 tabItems(
                   
-                  tabItem(tabName = "introduction",
-                          h2("place introductory elements here")),
+                  tabItem(tabName = "introduction"),
                   
                   tabItem(tabName = "timeandplace",
                           navbarPage("Time and Place of the Epidemic",
@@ -62,13 +61,7 @@ dashboardPage(skin = "red",
                               
                             )
                           )
-                  )),
-                tabItem(tabName = "caseByHDI",
-                        tabPanel("Cases and Deaths by Human Development Index"),
-              
-                tabItem(tabName = "recoveries",
-                        h2("recoveries content"))
-)
-)
-)
+                  ),
+                  tabItem(tabName = "recoveries"))))
+
 

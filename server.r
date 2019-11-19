@@ -15,4 +15,8 @@ function(input, output, session) {
   output$sexPlot <- renderPlot({
 
   })
+  
+  output$HDIplot <- renderPlot({
+    
+  })
 }
