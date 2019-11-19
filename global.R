@@ -74,3 +74,6 @@ tidySARSdata$continent <- c("Oceania", "South America", "North America", "Asia",
                             "North America", "Asia")
 View(tidySARSdata)
 
+#Data frame for Gender Graphs
+gendertidySARSdata <- tidySARSdata %>% 
+  gather(`female`, `male`, 'total', key = "Gender", value = "Incidence")
