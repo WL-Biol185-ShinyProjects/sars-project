@@ -65,9 +65,19 @@ dashboardPage(skin = "red",
                   )),
                 tabItem(tabName = "caseByHDI",
                         tabPanel("Cases and Deaths by Human Development Index"),
+<<<<<<< HEAD
                         
                         tabItem(tabName = "recoveries",
                                 h2("recoveries content"))
                 )
               )
 )
+=======
+              
+                tabItem(tabName = "recoveries",
+                        h2("recoveries content"))
+)
+)
+)
+
+>>>>>>> a921007cd9be1c1790b066091e6b584b68a6003e
