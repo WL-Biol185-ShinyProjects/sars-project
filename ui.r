@@ -7,7 +7,7 @@ library(readxl)
 library(htmltools)
 library(leaflet)
 
-
+SARS_data <- SARS_data[-c(33), ]
 #Page Aesthetics
 dashboardPage(skin = "red",
               dashboardHeader(title = "The 2003 SARs Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
@@ -47,11 +47,11 @@ dashboardPage(skin = "red",
                   
                   tabItem(tabName = "casebysex",
                           fluidPage(
-                            titlePanel("case by sex histograms"),
+                            titlePanel("Case by sex"),
                             sidebarLayout(
                               sidebarPanel(
                                 selectInput("region", "Region:",
-                                            choices = colnames(SARS_data_ll))),
+                                            choices = SARS_data$Areas)),
                               mainPanel(
                                 plotOutput("sexPlot")
                               )

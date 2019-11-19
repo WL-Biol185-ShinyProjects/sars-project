@@ -7,6 +7,7 @@ library(stringr)
 library(htmltools)
 library(leaflet)
 library(readr)
+#Data Frame for Place Map
 SARS_data_ll <- data.frame(
   lat = c(-25.274398, -14.235004, 56.130366	, 35.861660 , 22.396428, 22.198745, 23.697810, 4.570868, 
           61.924110, 46.227638, 51.165691, 20.593684,-0.789275, 41.871940, 29.311660, 4.210484, 46.862496,
@@ -33,6 +34,7 @@ SARS_data_ll <- data.frame(
 
 SARS_data_ll$popupText <- paste(strong("Area:"), SARS_data_ll$Areas, br(), strong("Total Cases:"), SARS_data_ll$Total, br(), strong("Total Deaths:"), SARS_data_ll$NumberofDeaths)
 
+#Data Frame for Time Map
 tidySARSdata <- read_excel("SARS data ll.xlsx", 
                            range = "A1:S33", col_types = c("numeric", "numeric", "text", 
                                                            "numeric", "numeric", "numeric", 
@@ -47,6 +49,7 @@ names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "to
                          "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
 HDI2003 <- read_csv("HDI2003.csv", col_types = cols(HDI = col_number()))
 summary(HDI2003)
+
 #1Q = 0.2660-0.4900 #2Q = 0.4900-0.6805 #3Q 0.6805-0.7755 #4Q 0.7755-0.9240
 HDI2003 <- add_case(HDI2003, Country = c("China, Macao Special Administrative Region", "China, Taiwan Special Administrative Region"), HDI = c("NA", "NA"))
 HDI2003$Country[75] <- "China, Hong Kong Special Administrative Region"
@@ -59,3 +62,6 @@ HDIsars2003 <- HDI2003 %>%
 HDIsars2003$HDIquartile <- c("1st", "3rd", "4th", "2nd", "4th", "NA", "NA", "2nd", "4th", "4th", "4th", "2nd", "2nd", "4th", "4th", "3rd", "2nd", "4th", 
                              "2nd", "4th", "4th", "3rd", "3rd", "4th", "2nd", "4th", "4th", "4th", "2nd", "4th", "4th", "2nd")
 View(HDIsars2003)
+
+#Data Frame for Gender
+SARS_data <- SARS_data[-c(33), ]
