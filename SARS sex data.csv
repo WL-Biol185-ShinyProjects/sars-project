@@ -1,0 +1,97 @@
+Area,Sex,Incidents
+Australia,Female,4
+Australia, Male,2
+Australia, Total,6
+Brazil,Female,1
+Brazil, Male,0
+Brazil, Total,1
+Canada,Female,151
+Canada, Male,100
+Canada, Total,251
+China,Female,NA
+China, Male,NA
+China, Total,5327
+"China, Hong Kong Special Administrative Region",Female,977
+"China, Hong Kong Special Administrative Region", Male,778
+"China, Hong Kong Special Administrative Region", Total,1755
+"China, Macao Special Administrative Region",Female,0
+"China, Macao Special Administrative Region", Male,1
+"China, Macao Special Administrative Region", Total,1
+"China, Taiwan",Female,349
+"China, Taiwan", Male,319
+"China, Taiwan", Total,665
+Colombia,Female,1
+Colombia, Male,0
+Colombia, Total,1
+Finland,Female,0
+Finland, Male,1
+Finland, Total,1
+France,Female,1
+France, Male,6
+France, Total,7
+Germany,Female,4
+Germany, Male,5
+Germany, Total,9
+India,Female,0
+India, Male,3
+India, Total,3
+Indonesia,Female,0
+Indonesia, Male,2
+Indonesia, Total,2
+Italy,Female,1
+Italy, Male,3
+Italy, Total,4
+Kuwait ,Female,1
+Kuwait , Male,0
+Kuwait , Total,1
+Malaysia,Female,1
+Malaysia, Male,4
+Malaysia, Total,5
+Mongolia,Female,8
+Mongolia, Male,1
+Mongolia, Total,9
+New Zealand,Female,1
+New Zealand, Male,0
+New Zealand, Total,1
+Phillippines,Female,8
+Phillippines, Male,6
+Phillippines, Total,14
+Republic of Ireland,Female,0
+Republic of Ireland, Male,1
+Republic of Ireland, Total,1
+Republic of Korea,Female,0
+Republic of Korea, Male,3
+Republic of Korea, Total,3
+Romania,Female,0
+Romania, Male,1
+Romania, Total,1
+Russian Federation,Female,0
+Russian Federation, Male,1
+Russian Federation, Total,1
+Singapore,Female,161
+Singapore, Male,77
+Singapore, Total,238
+South Africa,Female,0
+South Africa, Male,1
+South Africa, Total,1
+Spain,Female,0
+Spain, Male,1
+Spain, Total,1
+Sweden,Female,1
+Sweden, Male,2
+Sweden, Total,3
+Switzerland,Female,0
+Switzerland, Male,1
+Switzerland, Total,1
+Thailand,Female,5
+Thailand, Male,4
+Thailand, Total,9
+United Kingdom,Female,2
+United Kingdom, Male,2
+United Kingdom, Total,4
+United States,Female,16
+United States, Male,17
+United States, Total,33
+Vietnam,Female,39
+Vietnam, Male,24
+Vietnam, Total,63
