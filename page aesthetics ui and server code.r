@@ -62,3 +62,23 @@ function(input, output, session) {
   })
   
 }
+
+
+#Data frame for Gender Graphs
+gendertidySARSdata <- tidySARSdata %>% 
+  gather(`female`, `male`, 'total', key = "Gender", value = "Incidence")
+
+
+tabItem(tabName = "casebysex",
+        fluidPage(
+          titlePanel("Case by sex"),
+          sidebarLayout(
+            sidebarPanel(
+              selectInput("region", "Region:",
+                          choices = sort(unique(gendertidySARSdata$areas)),
+                          selected = 1),
+              mainPanel(
+                plotOutput("sexPlot")
+              )
+              
+            )
