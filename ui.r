@@ -64,13 +64,26 @@ dashboardPage(skin = "red",
                               mainPanel(
                                 plotOutput("sexPlot")
                                 
+                                
                               )
                             )
                           )
                   ),
                   
                   tabItem(tabName = "caseByHDI",
-                          h2("Cases and Deaths by Human Development Index")
+                          navbarPage("Total Cases and Deathsy by HDI and Continent",
+                                     tabPanel("Human Development Index",
+                                              fluidRow(
+                                                plotOutput("HDIplot"),
+                                                checkboxGroupInput("continentBox", "Continent:",
+                                                                   choices = unique(tidySARSdata$continent),
+                                                                   selected = "Oceania")
+                                              )),
+                                     tabPanel("Countries",
+                                              fluidRow(
+                                                dataTableOutput("casesAndDeathsDF")
+                                              ))
+                                     )
                   ),
                   
                   tabItem(tabName = "recoveries",
@@ -78,6 +91,5 @@ dashboardPage(skin = "red",
                   )
                 )
               )
-)
-                                
+)                
                                 
