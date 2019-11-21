@@ -22,6 +22,18 @@ function(input, output, session) {
   })
   
   output$HDIplot <- renderPlot({
-    
+    tidySARSdata %>% 
+      filter(continent == input$continentBox) %>% 
+      ggplot(aes(x = total, y = deaths)) + geom_jitter(aes(colour = HDIquart))
   })
+  
+  output$continentPlot <- renderPlot({
+    tidySARSdata %>% 
+      ggplot(aes(x = total, y = deaths)) + geom_jitter(aes(colour = continent))
+  })
+  
+  output$casesAndDeathsDF <- renderDataTable({
+    HDIdataframe
+  })
+  
 }

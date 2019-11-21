@@ -77,3 +77,7 @@ View(tidySARSdata)
 #Data frame for Gender Graphs
 gendertidySARSdata <- tidySARSdata %>% 
   gather(`female`, `male`, 'total', key = "Gender", value = "Incidence")
+
+#dataframe for HDI
+HDIdataframe <- tidySARSdata %>% 
+  select(areas, total, deaths, HDI)
