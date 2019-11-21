@@ -25,8 +25,7 @@ dashboardPage(skin = "red",
                 
                 tabItems(
                   
-                  tabItem(tabName = "introduction",
-                          h2("place introductory elements here")),
+                  tabItem(tabName = "introduction"),
                   
                   tabItem(tabName = "timeandplace",
                           navbarPage("Time and Place of the Epidemic",
@@ -64,20 +63,33 @@ dashboardPage(skin = "red",
                                 ),
                               mainPanel(
                                 plotOutput("sexPlot")
+                                
+                                
                               )
                             )
                           )
                   ),
                   
                   tabItem(tabName = "caseByHDI",
-                          h2("Cases and Deaths by Human Development Index")
-                          ),
-                
+                          navbarPage("Total Cases and Deathsy by HDI and Continent",
+                                     tabPanel("Human Development Index",
+                                              fluidRow(
+                                                plotOutput("HDIplot"),
+                                                checkboxGroupInput("continentBox", "Continent:",
+                                                                   choices = unique(tidySARSdata$continent),
+                                                                   selected = "Oceania")
+                                              )),
+                                     tabPanel("Countries",
+                                              fluidRow(
+                                                dataTableOutput("casesAndDeathsDF")
+                                              ))
+                                     )
+                  ),
+                  
                   tabItem(tabName = "recoveries",
                           h2("recoveries content")
-                          )
+                  )
                 )
               )
-)
-  
-  
+)                
+                                

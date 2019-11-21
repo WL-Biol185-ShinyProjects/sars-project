@@ -74,6 +74,10 @@ tidySARSdata$continent <- c("Oceania", "South America", "North America", "Asia",
                             "North America", "Asia")
 View(tidySARSdata)
 
-#Data frame for Gender Graphs
+#Data frame for Sex Graphs
 sextidySARSdata <- tidySARSdata %>% 
   gather('female', 'male', 'total', key = "Sex", value = "Incidence")
+
+#dataframe for HDI
+HDIdataframe <- tidySARSdata %>% 
+  select(areas, total, deaths, HDI)
