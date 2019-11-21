@@ -54,14 +54,8 @@ dashboardPage(skin = "red",
                             sidebarLayout(
                               sidebarPanel(
                                 selectInput("region", "Region:",
-                                            choices = tidySARSdata$areas)),
+                                            choices = sort(unique(gendertidySARSdata$areas)),
                               mainPanel(
                                 plotOutput("sexPlot")
-                              )
-                              
-                            )
-                          )
-                  ),
-                  tabItem(tabName = "recoveries"))))
-
-
+                              )))))))))
+  
