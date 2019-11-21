@@ -59,7 +59,7 @@ dashboardPage(skin = "red",
                             sidebarLayout(
                               sidebarPanel(
                                 selectInput("region", "Region:",
-                                            choices = sort(unique(gendertidySARSdata$areas)),
+                                            choices = sort(sextidySARSdata$areas),
                                             selected = 1)
                                 ),
                               mainPanel(
