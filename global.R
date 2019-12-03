@@ -8,6 +8,7 @@ library(htmltools)
 library(leaflet)
 library(readr)
 
+
 #Data Frame for Place Map
 SARS_data_ll <- data.frame(
   lat = c(-25.274398, -14.235004, 56.130366	, 35.861660 , 22.396428, 22.198745, 23.697810, 4.570868, 
@@ -84,6 +85,7 @@ sextidySARSdata <- tidySARSdata %>%
 HDIdataframe <- tidySARSdata %>% 
   select(areas, total, deaths, HDI)
 
+
 #data frame for data explorer
 tidyDataExplorer <- tidySARSdata %>% 
   select(areas, total, female, male, medianAge, youngestCase,
@@ -93,4 +95,10 @@ tidyDataExplorer <- tidySARSdata %>%
 names(tidyDataExplorer) <- c("Country", "Total Cases", "Female", "Male", "Median Age",
                              "Youngest Case", "Oldest Case", "First Case", "Last Case", "Cases Recovered", "Deaths", "Fatality Rate", "Imported Cases",
                              "Percentage of Imported Cases", "Healthcare Workers Affected", "Percentage of Healthcare Workers Affected", "HDI", "HDI Quartile")
+
+#dataframe for Recoveries
+recoverydata <- tidySARSdata %>%
+  select(areas, casesRecovered, total)
+recoverydata$recoveryrate <- recoverydata$casesRecovered/recoverydata$total
+
 

@@ -34,6 +34,7 @@ function(input, output, session) {
       select(areas, total, deaths, HDI)
   })
   
+
   output$SARSdataExplorer <- renderDataTable({
     tidyDataExplorer %>% 
       select(Country, `Total Cases`, Female, Male, HDI, `HDI Quartile`, `Median Age`,
@@ -42,4 +43,13 @@ function(input, output, session) {
              `Percentage of Healthcare Workers Affected`)
   })
   
+
+  output$recoveryPlot <- renderPlot({
+    recoverydata %>%      
+      ggplot(aes(recoveryrate, areas)) +
+      geom_segment(aes(x = 0, y = areas, xend = recoveryrate, yend = areas), color = "grey50") +
+      geom_point()
+      
+  })
+
 }

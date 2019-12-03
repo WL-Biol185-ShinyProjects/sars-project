@@ -6,7 +6,7 @@ library(tidyverse)
 library(readxl)
 library(htmltools)
 library(leaflet)
-
+library(ggplot2)
 
 #Page Aesthetics
 dashboardPage(skin = "red",
@@ -88,13 +88,22 @@ dashboardPage(skin = "red",
                   ),
                   
                   tabItem(tabName = "recoveries",
-                          h2("recoveries content")
+                            titlePanel("Recoveries by Region"),
+                                fluidRow(
+                                  plotOutput("recoveryPlot")
+                            )
+                            
+                          )
+                  )
                   ),
+              
                   tabItem(tabName = "dataExplorer",
                           fluidRow(column(width = 4,
                                            dataTableOutput("SARSdataExplorer"))
                           ))
                 )
-              )
-)                
+              
+
+   
+
                                 
