@@ -91,8 +91,8 @@ dashboardPage(skin = "red",
                           h2("recoveries content")
                   ),
                   tabItem(tabName = "dataExplorer",
-                          fluidRow(
-                            dataTableOutput("SARSdataExplorer")
+                          fluidRow(column(width = 4,
+                                           dataTableOutput("SARSdataExplorer"))
                           ))
                 )
               )

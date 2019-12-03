@@ -45,9 +45,11 @@ tidySARSdata <- read_excel("SARS data ll.xlsx",
                                                            "numeric", "numeric", "date", 
                                                            "date"))
 names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "total", 
-                         "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", "
-                         casesRecovered", "deaths", "caseFatalityRate", "importedCases", 
+                         "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", 
+                         "casesRecovered", "deaths", "caseFatalityRate", "importedCases", 
                          "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
+
+#HDI data
 HDI2003 <- read_csv("HDI2003.csv", col_types = cols(HDI = col_number()))
 summary(HDI2003)
 
@@ -81,3 +83,14 @@ sextidySARSdata <- tidySARSdata %>%
 #dataframe for HDI
 HDIdataframe <- tidySARSdata %>% 
   select(areas, total, deaths, HDI)
+
+#data frame for data explorer
+tidyDataExplorer <- tidySARSdata %>% 
+  select(areas, total, female, male, medianAge, youngestCase,
+         oldestCase, firstOnset, lastOnset, casesRecovered,
+         deaths, caseFatalityRate, importedCases,
+         percentImportedcases, affectedHCW, percentHCW, HDI, HDIquart)
+names(tidyDataExplorer) <- c("Country", "Total Cases", "Female", "Male", "Median Age",
+                             "Youngest Case", "Oldest Case", "First Case", "Last Case", "Cases Recovered", "Deaths", "Fatality Rate", "Imported Cases",
+                             "Percentage of Imported Cases", "Healthcare Workers Affected", "Percentage of Healthcare Workers Affected", "HDI", "HDI Quartile")
+
