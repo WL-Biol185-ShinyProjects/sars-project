@@ -18,7 +18,8 @@ dashboardPage(skin = "red",
                                  menuItem("Time and Place", tabName = "timeandplace", icon = icon ("map-marked-alt", lib = "font-awesome")),
                                  menuItem("Case by Sex", tabName = "casebysex", icon = icon("list-ol", lib = "font-awesome")),
                                  menuItem("Case by HDI", tabName = "caseByHDI", icon = icon("user-friends", lib = "font-awesome")),
-                                 menuItem("Recoveries", tabName = "recoveries", icon = icon("prescription", lib = "font-awesome")))
+                                 menuItem("Recoveries", tabName = "recoveries", icon = icon("prescription", lib = "font-awesome")),
+                                 menuItem("Data Explorer", tabName = "dataExplorer", icon = icon("table", lib = "font-awesome")))
               ),
               #content to put in our main body
               dashboardBody(
@@ -94,8 +95,14 @@ dashboardPage(skin = "red",
                             
                           )
                   )
+                  ),
+              
+                  tabItem(tabName = "dataExplorer",
+                          fluidRow(
+                            dataTableOutput("SARSdataExplorer")
+                          ))
                 )
-              )
+              
 
    
 
