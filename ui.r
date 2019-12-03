@@ -71,7 +71,7 @@ dashboardPage(skin = "red",
                   ),
                   
                   tabItem(tabName = "caseByHDI",
-                          navbarPage("Total Cases and Deathsy by HDI and Continent",
+                          navbarPage("Total Cases and Deaths by HDI and Continent",
                                      tabPanel("Human Development Index",
                                               fluidRow(
                                                 plotOutput("HDIplot"),
@@ -79,7 +79,7 @@ dashboardPage(skin = "red",
                                                                    choices = unique(tidySARSdata$continent),
                                                                    selected = "Oceania")
                                               )),
-                                     tabPanel("Countries",
+                                     tabPanel("Individual Country Data",
                                               fluidRow(
                                                 dataTableOutput("casesAndDeathsDF")
                                               ))

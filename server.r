@@ -33,7 +33,9 @@ function(input, output, session) {
   })
   
   output$casesAndDeathsDF <- renderDataTable({
-    HDIdataframe
+    tidySARSdata %>% 
+      filter(continent == input$continentBox) %>% 
+      select(areas, total, deaths, HDI)
   })
   
 }
