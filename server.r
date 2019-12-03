@@ -38,4 +38,10 @@ function(input, output, session) {
       select(areas, total, deaths, HDI)
   })
   
+  output$recoveryPlot <- renderPlot({
+    recoverydata %>%      ggplot(aes(recoveryrate, areas)) +
+      geom_segment(aes(x = 0, y = areas, xend = recoveryrate, yend = areas), color = "grey50") +
+      geom_point()
+      
+  })
 }
