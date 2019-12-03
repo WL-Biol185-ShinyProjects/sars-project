@@ -19,8 +19,8 @@ SARS_data_ll <- data.frame(
           25.748151, 2.213749, 10.451526, 78.962880, 113.921327, 12.567380, 47.481766, 101.975766, 103.846656,
           174.885971, 121.774017, -8.243890, 127.766922, 24.966760, 105.318756, 103.819836, 22.937506, -3.749220,
           18.643501, 8.227512, 100.992541, -3.435973, -95.712891, 108.277199),
-  Areas = c("Australia", "Brazil", "Canada", "China", "China, Hong Kong Special Administrative Region", 
-            "China, Macao Special Administrative Region","China, Taiwan", "Colombia", "Finland", "France",
+  Areas = c("Australia", "Brazil", "Canada", "China", "China, Hong Kong (Special Administrative Region)", 
+            "China, Macao (Special Administrative Region)","China, Taiwan", "Colombia", "Finland", "France",
             "Germany", "India", "Indonesia", "Italy", "Kuwait", "Malaysia", "Mongolia", "New Zealand", 
             "Philippines", "Republic of Ireland", "Republic of Korea", "Romania", "Russian Federation",
             "Singapore", "South Africa", "Spain", "Sweden", "Switzerland", "Thailand", "United Kingdom",
@@ -49,14 +49,16 @@ names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "to
                          "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", 
                          "casesRecovered", "deaths", "caseFatalityRate", "importedCases", 
                          "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
+tidySARSdata$areas[5] <- "Hong Kong (China, Special Administrative Region)"
+tidySARSdata$areas[6] <- "Macao (China, Special Administrative Region)"
 
 #HDI data
 HDI2003 <- read_csv("HDI2003.csv", col_types = cols(HDI = col_number()))
 summary(HDI2003)
 
 #1Q = 0.2660-0.4900 #2Q = 0.4900-0.6805 #3Q 0.6805-0.7755 #4Q 0.7755-0.9240
-HDI2003 <- add_case(HDI2003, Country = c("China, Macao Special Administrative Region", "China, Taiwan Special Administrative Region"), HDI = c("NA", "NA"))
-HDI2003$Country[75] <- "China, Hong Kong Special Administrative Region"
+HDI2003 <- add_case(HDI2003, Country = c("Macao (China, Special Administrative Region)", "Taiwan (China, Special Administrative Region)"), HDI = c("NA", "NA"))
+HDI2003$Country[75] <- "Hong Kong (China, Special Administrative Region)"
 HDI2003$Country[83] <- "Republic of Ireland"
 HDI2003$Country[91] <- "Republic of Korea"
 HDI2003$Country[186] <- "Vietnam"

@@ -37,9 +37,9 @@ function(input, output, session) {
 
   output$SARSdataExplorer <- renderDataTable({
     tidyDataExplorer %>% 
-      select(Country, `Total Cases`, Female, Male, HDI, `HDI Quartile`, `Median Age`,
+      select(Country, HDI, `Total Cases`, Female, Male, `Median Age`,
              `Youngest Case`, `Oldest Case`, `First Case`, `Last Case`, `Cases Recovered`,
-             Deaths, `Fatality Rate`, `Imported Cases`, `Percentage of Imported Cases`, `Healthcare Workers Affected`,
+             Deaths, `Fatality Rate`, `Percentage of Imported Cases`, `Healthcare Workers Affected`,
              `Percentage of Healthcare Workers Affected`)
   })
   

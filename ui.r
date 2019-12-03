@@ -93,15 +93,16 @@ dashboardPage(skin = "red",
                                   plotOutput("recoveryPlot")
                             )
                             
+                          ),
+                  tabItem(tabName = "dataExplorer",
+                          titlePanel("Data Explorer"),
+                          fluidPage(
+                            div(dataTableOutput("SARSdataExplorer"), style = "font-size:72%")
+                          )
                           )
                   )
-                  ),
-              
-                  tabItem(tabName = "dataExplorer",
-                          fluidRow(column(width = 4,
-                                           dataTableOutput("SARSdataExplorer"))
-                          ))
                 )
+              )
               
 
    
