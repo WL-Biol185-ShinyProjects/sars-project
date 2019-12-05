@@ -21,6 +21,7 @@ dashboardPage(skin = "purple",
                                  menuItem("Data Explorer", tabName = "dataExplorer", icon = icon("table", lib = "font-awesome")))
               ),
               #content to put in our main body
+              
               dashboardBody(
                 
                 tabItems(
@@ -60,6 +61,7 @@ dashboardPage(skin = "purple",
                                        ")
                                    ),
                             
+                                    
                                    box(background = "blue", img(src = "particles_928px.jpg", style = "max-width: 100%;"),
                                  
                                    h5()
