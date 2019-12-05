@@ -31,14 +31,14 @@ dashboardPage(skin = "purple",
                             column(width = 5,
                                    box(
                                      title = "History of SARS", width = NULL, solidHeader = TRUE, status = "primary",
-                                     "The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia.By March 2003, World Health Organization released a global alert for this atypical, severe pneuomonia of unknown origin, and the Center for Disease Control began to issue health alerts. 
+                                     "The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia. By March 2003, World Health Organization released a global alert for this atypical, severe pneuomonia of unknown origin, and the Center for Disease Control began to issue health alerts. 
                                        SARS became the first major pandemic of the millenium.A novel coronavirus (named SARS-CoV) was determined to cause SARS. 
                                        SARS-CoV has been found in the civet, a mammmalian animal found in China, and horseshoe bats.
                                        Since 2004, there have not been any reported cases of SARS, but the disease has been watched for possible reemergence."
                                    ),
                                    box(
                                      title = "Relevance", width = NULL, solidHeader = TRUE, status = "primary",
-                                     "Why are we concerned about a past epidemic?SARS is being watched closely for possible reemergence since it has not been completely eradicated.
+                                     "Why are we concerned about a past epidemic? SARS is being watched closely for possible reemergence since it has not been completely eradicated.
                                        Pandemics of infectious diseases are predicted to only increase with globalization. Yet, globalization also allowed for a more coordinated response to control SARS outbreaks.
                                        Data on the 2003 SARS epidemic and global responses to the epidemic are an invaluable resource for coordinating global responses to epidemics in the future. 
                                        In 2012, SARS Co-V was declared a select agent, which means it could possibly pose severe threats to public health and safety.
@@ -57,8 +57,11 @@ dashboardPage(skin = "purple",
                                        "https://www.ncbi.nlm.nih.gov/books/NBK92458/",
                                        tags$br(),
                                        "https://www.ncbi.nlm.nih.gov/pubmed/14703130
-                                       "),
-                            
+                                       ")
+                                   ),
+                            column(width = 5,
+                                   box(background = "blue", img(src = "particles_928px.jpg", style = "max-width: 100%;")),
+                                 
                                    h5()
                             )
                           )
@@ -139,5 +142,5 @@ dashboardPage(skin = "purple",
                 )
               )
 )
-
+              
 
