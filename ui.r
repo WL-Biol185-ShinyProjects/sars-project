@@ -10,7 +10,7 @@ library(ggplot2)
 
 #Page Aesthetics
 dashboardPage(skin = "purple",
-              dashboardHeader(title = "The 2003 SARs Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
+              dashboardHeader(title = "The 2003 SARS Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
               #content to put in our sidebar
               dashboardSidebar(width = 200,
                                sidebarMenu(
@@ -45,18 +45,17 @@ dashboardPage(skin = "purple",
                                        In 2012, SARS Co-V was declared a select agent, which means it could possibly pose severe threats to public health and safety.
                                        This means that SARS Co-V, and related coronaviruses, are potential candidates for bioterrorism.
                                        Studying the epidemiology of this coronavirus is important in understanding the nature of infectious diseases as a whole."
-                                     )),
-            
-                    
-                            tags$br(),
-                            h5("https://www.cdc.gov/about/history/sars/timeline.htm"),
-                            h5("https://www.cdc.gov/sars/index.html"),
-                            h5("https://www.who.int/csr/sars/en/"),
-                            h5("https://cmr.asm.org/content/20/4/660"),
-                            h5("https://www.ncbi.nlm.nih.gov/books/NBK92458/"),
-                            h5("https://www.ncbi.nlm.nih.gov/pubmed/14703130")
-                            
-                          )),
+                                     ),
+                                     tags$br(),
+                                     h5("https://www.cdc.gov/about/history/sars/timeline.htm"),
+                                     h5("https://www.cdc.gov/sars/index.html"),
+                                     h5("https://www.who.int/csr/sars/en/"),
+                                     h5("https://cmr.asm.org/content/20/4/660"),
+                                     h5("https://www.ncbi.nlm.nih.gov/books/NBK92458/"),
+                                     h5("https://www.ncbi.nlm.nih.gov/pubmed/14703130")
+                                     )
+                            )
+                          ),
                   
                   tabItem(tabName = "timeandplace",
                           navbarPage("Time and Place of the Epidemic",
