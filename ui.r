@@ -62,7 +62,7 @@ dashboardPage(skin = "purple",
                                    ),
                             
                                     
-                                   box(background = "blue", img(src = "particles_928px.jpg", style = "max-width: 100%;"),
+                                   box(background = "blue", img(src = "particles_928px.jpg", style = "max-width: 100%;"), 
                                  
                                    h5()
                             )
