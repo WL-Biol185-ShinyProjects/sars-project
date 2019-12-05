@@ -9,7 +9,7 @@ library(ggplot2)
 
 #Page Aesthetics
 dashboardPage(skin = "purple",
-              dashboardHeader(title = "The 2003 SARS Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
+              dashboardHeader(title = "The 2003 SARS Epidemic: Jenna Kim and Tiffany Ko", titleWidth = 500),
               #content to put in our sidebar
               dashboardSidebar(width = 200,
                                sidebarMenu(
@@ -33,7 +33,7 @@ dashboardPage(skin = "purple",
                                      title = "History of SARS", width = NULL, solidHeader = TRUE, status = "primary",
                                      "The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia. By March 2003, World Health Organization released a global alert for this atypical, severe pneuomonia of unknown origin, and the Center for Disease Control began to issue health alerts. 
                                        SARS became the first major pandemic of the millenium.A novel coronavirus (named SARS-CoV) was determined to cause SARS. 
-                                       SARS-CoV has been found in the civet, a mammmalian animal found in China, and horseshoe bats.
+                                       SARS-CoV has been found in the civet, a mammalian animal found in China, and horseshoe bats.
                                        Since 2004, there have not been any reported cases of SARS, but the disease has been watched for possible reemergence."
                                    ),
                                    box(
@@ -59,8 +59,8 @@ dashboardPage(skin = "purple",
                                        "https://www.ncbi.nlm.nih.gov/pubmed/14703130
                                        ")
                                    ),
-                            column(width = 5,
-                                   box(background = "blue", img(src = "particles_928px.jpg", style = "max-width: 100%;")),
+                            
+                                   box(background = "blue", img(src = "particles_928px.jpg", style = "max-width: 100%;"),
                                  
                                    h5()
                             )
