@@ -9,7 +9,7 @@ library(leaflet)
 library(ggplot2)
 
 #Page Aesthetics
-dashboardPage(skin = "red",
+dashboardPage(skin = "purple",
               dashboardHeader(title = "The 2003 SARs Epidemic: Jenna Kim and Tiffany Ko",titleWidth = 500),
               #content to put in our sidebar
               dashboardSidebar(width = 200,
@@ -27,27 +27,27 @@ dashboardPage(skin = "red",
                 tabItems(
                   
                   tabItem(tabName = "introduction",
-                          fluidPage(
-                            titlePanel("Severe Acute Respiratory Syndrome (SARS)"),
-                            tags$b(),
-                            h3("History of the SARS Epidemic"),
-                            h4("The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia. 
-                            By March 2003, World Health Organization released a global alert for this atypical, severe pneuomonia of unknown origin, and the Center for Disease Control began to issue health alerts. 
-                            SARS became the first major pandemic of the millenium.
-                            A novel coronavirus (named SARS-CoV) was determined to cause SARS. 
-                            SARS-CoV has been found in the civet, a mammmalian animal found in China, and horseshoe bats. 
-                            Since 2004, there have not been any reported cases of SARS, but the disease has been watched for possible reemergence."),
-                            tags$b(),
-                            h3("Relevance"),
-                            h4("Why are we concerned about a past epidemic?
-                               SARS is being watched closely for possible reemergence since it has not been completely eradicated.
-                               Pandemics of infectious diseases are predicted to only increase with globalization.
-                               Yet, globalization also allowed for a more coordinated response to control SARS outbreaks.
-                               Data on the 2003 SARS epidemic and global responses to the epidemic are an invaluable resource for coordinating global responses to epidemics in the future. 
-                               In 2012, SARS Co-V was declared a select agent, which means it could possibly pose severe threats to public health and safety.
-                               This means that SARS Co-V, and related coronaviruses, are potential candidates for bioterrorism.
-                               Studying the epidemiology of this coronavirus is important in understanding the nature of infectious diseases as a whole.
-                               "),
+                          fluidRow(
+                            titlePanel("Severe Acute Respiratory Syndrome (SARS): An Overview"),
+                              column(width = 5,
+                                     box(
+                                       title = "History of SARS", width = NULL, solidHeader = TRUE, status = "primary",
+                                       "The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia.By March 2003, World Health Organization released a global alert for this atypical, severe pneuomonia of unknown origin, and the Center for Disease Control began to issue health alerts. 
+                                       SARS became the first major pandemic of the millenium.A novel coronavirus (named SARS-CoV) was determined to cause SARS. 
+                                       SARS-CoV has been found in the civet, a mammmalian animal found in China, and horseshoe bats.
+                                       Since 2004, there have not been any reported cases of SARS, but the disease has been watched for possible reemergence."
+                                       ),
+                                     box(
+                                       title = "Relevance", width = NULL, solidHeader = TRUE, status = "primary",
+                                       "Why are we concerned about a past epidemic?SARS is being watched closely for possible reemergence since it has not been completely eradicated.
+                                       Pandemics of infectious diseases are predicted to only increase with globalization. Yet, globalization also allowed for a more coordinated response to control SARS outbreaks.
+                                       Data on the 2003 SARS epidemic and global responses to the epidemic are an invaluable resource for coordinating global responses to epidemics in the future. 
+                                       In 2012, SARS Co-V was declared a select agent, which means it could possibly pose severe threats to public health and safety.
+                                       This means that SARS Co-V, and related coronaviruses, are potential candidates for bioterrorism.
+                                       Studying the epidemiology of this coronavirus is important in understanding the nature of infectious diseases as a whole."
+                                     )),
+            
+                    
                             tags$br(),
                             h5("https://www.cdc.gov/about/history/sars/timeline.htm"),
                             h5("https://www.cdc.gov/sars/index.html"),
