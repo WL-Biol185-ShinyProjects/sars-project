@@ -103,4 +103,11 @@ recoverydata <- tidySARSdata %>%
   select(areas, casesRecovered, total)
 recoverydata$recoveryrate <- recoverydata$casesRecovered/recoverydata$total
 
+#words for introduction
+#Severe acute respiratory syndrome (SARS)
+#The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia. 
+#By March 2003, World Health Organization released a global alert for this atypical, severe pneuomonia of unknown origin, and the Center for Disease Control began to issue health alerts.
+#A novel coronavirus (named SARS-CoV) was determined to cause SARS, and it has been found in the civet, a mammmalian animal found in China.
+#Since 2004, there have not been any reported cases of SARS
+#The global SARS outbreak of 2003 
 
