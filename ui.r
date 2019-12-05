@@ -46,9 +46,7 @@ dashboardPage(skin = "purple",
                                        This means that SARS Co-V, and related coronaviruses, are potential candidates for bioterrorism.
                                        Studying the epidemiology of this coronavirus is important in understanding the nature of infectious diseases as a whole."
                                      )),
-            
-                    
-                            tags$br(),
+                        
                             h5("https://www.cdc.gov/about/history/sars/timeline.htm"),
                             h5("https://www.cdc.gov/sars/index.html"),
                             h5("https://www.who.int/csr/sars/en/"),
