@@ -60,9 +60,9 @@ dashboardPage(skin = "purple",
                                        "https://www.ncbi.nlm.nih.gov/pubmed/14703130
                                        ")
                                    ),
-                            
+                          
                                     
-                                   box(background = "blue", img(src = "particles_928px.jpg", style = "max-width: 100%;"), 
+                                   box(background = "blue", img(src = "SARSspreadResized.png"), 
                                  
                                    h5()
                             )
