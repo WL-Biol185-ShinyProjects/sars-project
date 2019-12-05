@@ -62,12 +62,10 @@ HDI2003$Country[75] <- "Hong Kong (China, Special Administrative Region)"
 HDI2003$Country[83] <- "Republic of Ireland"
 HDI2003$Country[91] <- "Republic of Korea"
 HDI2003$Country[186] <- "Vietnam"
-View(HDI2003)
 HDIsars2003 <- HDI2003 %>% 
   slice(9, 24, 32, 36, 75, 196, 197, 37, 60, 61, 65, 78, 79, 84, 92, 105, 115, 123, 136, 83, 91, 140, 141, 153, 157, 159, 163, 164, 168, 180, 181, 186)
 HDIsars2003$HDIquartile <- c("1st", "3rd", "4th", "2nd", "4th", "NA", "NA", "2nd", "4th", "4th", "4th", "2nd", "2nd", "4th", "4th", "3rd", "2nd", "4th", 
                              "2nd", "4th", "4th", "3rd", "3rd", "4th", "2nd", "4th", "4th", "4th", "2nd", "4th", "4th", "2nd")
-View(HDIsars2003)
 
 tidySARSdata$HDI <- HDIsars2003$HDI
 tidySARSdata$HDIquart <- HDIsars2003$HDIquartile
@@ -77,7 +75,6 @@ tidySARSdata$continent <- c("Oceania", "South America", "North America", "Asia",
                             "Asia", "Europe", "Asia", "Europe", "Asia", 
                             "Asia", "Africa", "Europe", "Europe", "Europe", "Asia", "Europe",
                             "North America", "Asia")
-View(tidySARSdata)
 
 #Data frame for Sex Graphs
 sextidySARSdata <- tidySARSdata %>% 
