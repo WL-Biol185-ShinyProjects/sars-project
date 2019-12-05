@@ -46,21 +46,20 @@ dashboardPage(skin = "purple",
                                        Studying the epidemiology of this coronavirus is important in understanding the nature of infectious diseases as a whole."
                                    ),
                                    box(title = "Links for More Information", width = NULL, background = "blue",
-                                       "https://www.cdc.gov/about/history/sars/timeline.htm
-                                       https://www.cdc.gov/sars/index.html
-                                       https://www.who.int/csr/sars/en/
-                                       https://cmr.asm.org/content/20/4/660
-                                       https://www.ncbi.nlm.nih.gov/books/NBK92458/
-                                       https://www.ncbi.nlm.nih.gov/pubmed/14703130
+                                       "https://www.cdc.gov/about/history/sars/timeline.htm",
+                                       tags$br(),
+                                       "https://www.cdc.gov/sars/index.html",
+                                       tags$br(),
+                                       "https://www.who.int/csr/sars/en/",
+                                       tags$br(),
+                                       "https://cmr.asm.org/content/20/4/660",
+                                       tags$br(),
+                                       "https://www.ncbi.nlm.nih.gov/books/NBK92458/",
+                                       tags$br(),
+                                       "https://www.ncbi.nlm.nih.gov/pubmed/14703130
                                        "),
-                                   
-                                   tags$br(),
-                                   h5("https://www.cdc.gov/about/history/sars/timeline.htm"),
-                                   h5("https://www.cdc.gov/sars/index.html"),
-                                   h5("https://www.who.int/csr/sars/en/"),
-                                   h5("https://cmr.asm.org/content/20/4/660"),
-                                   h5("https://www.ncbi.nlm.nih.gov/books/NBK92458/"),
-                                   h5("https://www.ncbi.nlm.nih.gov/pubmed/14703130")
+                            
+                                   h5()
                             )
                           )
                   ),
