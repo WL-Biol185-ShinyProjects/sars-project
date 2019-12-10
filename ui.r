@@ -68,7 +68,9 @@ dashboardPage(skin = "purple",
                                    ),
                           
                                     
-                                   box(background = "blue", img(src = "SARSspreadResized.png"), 
+                                   box(background = "blue", img(src = "SARSspreadResized.png",
+                                                                style = "display: block; margin-left: auto, margin-right: auto;"
+                                                                ), 
                                  
                                    h5()
                             )
