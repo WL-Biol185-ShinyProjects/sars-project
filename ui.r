@@ -29,7 +29,7 @@ dashboardPage(skin = "purple",
                   tabItem(tabName = "introduction",
                           fluidRow(
                             titlePanel("Severe Acute Respiratory Syndrome (SARS): An Overview"),
-                            column(width = 5,
+                            column(width = 12,
                                    box(
                                      title = "History of SARS", width = NULL, solidHeader = TRUE, status = "primary",
                                      "The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia.
