@@ -83,6 +83,7 @@ sextidySARSdata <- tidySARSdata %>%
 #dataframe for HDI
 HDIdataframe <- tidySARSdata %>% 
   select(areas, total, deaths, HDI)
+names(HDIdataframe) <- c("Country", "Total Cases", "Total Deaths", "HDI")
 
 
 #data frame for data explorer
