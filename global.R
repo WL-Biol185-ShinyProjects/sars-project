@@ -45,7 +45,7 @@ tidySARSdata <- read_excel("SARS data ll.xlsx",
                                                            "numeric", "numeric", "numeric", 
                                                            "numeric", "numeric", "date", 
                                                            "date"))
-names(tidySARSdata) <- c("latitude", "longitude", "areas", "female", "male", "total", 
+names(tidySARSdata) <- c("latitude", "longitude", "areas", "Female", "Male", "Total", 
                          "medianAge", "youngestCase", "oldestCase", "currentlyHospitalized", 
                          "casesRecovered", "deaths", "caseFatalityRate", "importedCases", 
                          "percentImportedcases", "affectedHCW", "percentHCW", "firstOnset", "lastOnset")
@@ -78,11 +78,11 @@ tidySARSdata$continent <- c("Oceania", "South America", "North America", "Asia",
 
 #Data frame for Sex Graphs
 sextidySARSdata <- tidySARSdata %>% 
-  gather('female', 'male', 'total', key = "Sex", value = "Incidence")
+  gather('Female', 'Male', 'Total', key = "Sex", value = "Incidence")
 
 #dataframe for HDI plot
 HDIdataframe <- tidySARSdata %>% 
-  select(areas, total, deaths, HDI)
+  select(areas, Total, deaths, HDI)
 names(HDIdataframe) <- c("Country", "Total Cases", "Total Deaths", "HDI")
 
 #dataframe for HDI table
@@ -94,7 +94,7 @@ names(HDIcopyTidySARSdata) <- c("Latitude", "Longitude", "Country", "Female", "M
 
 #data frame for data explorer
 tidyDataExplorer <- tidySARSdata %>% 
-  select(areas, total, female, male, medianAge, youngestCase,
+  select(areas, Total, Female, Male, medianAge, youngestCase,
          oldestCase, firstOnset, lastOnset, casesRecovered,
          deaths, caseFatalityRate, importedCases,
          percentImportedcases, affectedHCW, percentHCW, HDI, HDIquart)
@@ -104,12 +104,12 @@ names(tidyDataExplorer) <- c("Country", "Total Cases", "Female", "Male", "Median
 
 #dataframe for Recoveries
 recoverydata <- tidySARSdata %>%
-  select(areas, casesRecovered, total) %>% 
-  mutate(recoveryRate = casesRecovered/total) %>% 
+  select(areas, casesRecovered, Total) %>% 
+  mutate(recoveryRate = casesRecovered/Total) %>% 
   arrange(recoveryRate)
 
 #recoverydata$recoveryrate <- recoverydata$casesRecovered/recoverydata$total
-names(recoverydata) <- c("Countries", "casesRecovered", "total", "Recovery Rate")
+names(recoverydata) <- c("Countries", "casesRecovered", "Total", "Recovery Rate")
 
 
 #words for introduction
