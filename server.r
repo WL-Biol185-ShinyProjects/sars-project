@@ -22,16 +22,16 @@ function(input, output, session) {
   })
   
   output$HDIplot <- renderPlot({
-    tidySARSdata %>% 
+    HDIcopyTidySARSdata %>% 
       filter(continent %in% input$continentBox) %>% 
-      ggplot(aes(x = total, y = deaths)) + geom_jitter(aes(colour = HDIquart))
+      ggplot(aes(x = `Total Cases`, y = Deaths)) + geom_jitter(aes(colour = `HDI Quartile`), size = 2.5)
   })
   
   
   output$casesAndDeathsDF <- renderDataTable({
-    tidySARSdata %>% 
+    HDIcopyTidySARSdata %>% 
       filter(continent %in% input$continentBox) %>% 
-      select(areas, total, deaths, HDI)
+      select(Country, `Total Cases`, Deaths, `Human Development Index (HDI)`)
   })
   
 
@@ -39,16 +39,16 @@ function(input, output, session) {
     tidyDataExplorer %>% 
       select(Country, HDI, `Total Cases`, Female, Male, `Median Age`,
              `Youngest Case`, `Oldest Case`, `First Case`, `Last Case`, `Cases Recovered`,
-             Deaths, `Fatality Rate`, `Percentage of Imported Cases`, `Healthcare Workers Affected`,
-             `Percentage of Healthcare Workers Affected`)
+             Deaths, `Fatality Rate`, `Percentage of Imported Cases`, `Healthcare Workers Affected`)
   })
   
 
   output$recoveryPlot <- renderPlot({
-    recoverydata %>%      
-      ggplot(aes(recoveryrate, areas)) +
-      geom_segment(aes(x = 0, y = areas, xend = recoveryrate, yend = areas), color = "grey50") +
-      geom_point()
+    recoverydata %>%
+      ggplot(aes(`Recovery Rate`, Countries)) +
+      geom_segment(aes(x = 0, y = Countries, xend = `Recovery Rate`, yend = Countries), color = "grey50") +
+      geom_point(color = "skyblue", size = 3) +
+      theme_grey(base_size = 16)
       
   })
 

@@ -33,7 +33,7 @@ dashboardPage(skin = "purple",
                                    box(
                                      title = "History of SARS", width = NULL, solidHeader = TRUE, status = "primary",
                                      "The first cases of SARS in late 2002 and early 2003 in Asia were recorded as atypical pneumonia.
-                                     By March 2003, World Health Organization released a global alert for this atypical, severe pneuomonia
+                                     By March 2003, the World Health Organization released a global alert for this atypical, severe pneuomonia
                                      of unknown origin, and the Center for Disease Control began to issue health alerts. 
                                        SARS became the first major pandemic of the millenium. A novel coronavirus (named SARS-CoV) 
                                        was determined to cause SARS. SARS-CoV has been found in the civet, a mammalian animal found 
@@ -53,18 +53,17 @@ dashboardPage(skin = "purple",
                                      coronavirus is important in understanding the nature of infectious diseases as a whole."
                                    ),
                                    box(title = "Links for More Information", width = NULL, background = "blue",
-                                       "https://www.cdc.gov/about/history/sars/timeline.htm",
-                                       tags$br(),
-                                       "https://www.cdc.gov/sars/index.html",
-                                       tags$br(),
-                                       "https://www.who.int/csr/sars/en/",
-                                       tags$br(),
-                                       "https://cmr.asm.org/content/20/4/660",
-                                       tags$br(),
-                                       "https://www.ncbi.nlm.nih.gov/books/NBK92458/",
-                                       tags$br(),
-                                       "https://www.ncbi.nlm.nih.gov/pubmed/14703130
-                                       ")
+                                       a("SARS Timeline (CDC)", href = "https://www.cdc.gov/about/history/sars/timeline.htm", style = "color:LightGray;"),
+                                       br(),
+                                       a("SARS Information (CDC)", href = "https://www.cdc.gov/sars/index.html", style = "color:LightGray;"),
+                                       br(),
+                                       a("SARS Information and Reports (WHO)", href = "https://www.who.int/csr/sars/en/", style = "color:LightGray;"),
+                                       br(),
+                                       a("SARS-CoV as an Agent of Emerging and Reemerging Infection", href = "https://cmr.asm.org/content/20/4/660", style = "color:LightGray;"),
+                                       br(),
+                                       a("Learning from SARS: Preparing for the Next Disease Outbreak", href = "https://www.ncbi.nlm.nih.gov/books/NBK92458/", style = "color:LightGray;"),
+                                       br(),
+                                       a("Possible Bioweapons", href = "https://www.ncbi.nlm.nih.gov/pubmed/14703130", style = "color:LightGray;"))
                                    ),
                           
                                     
@@ -104,7 +103,7 @@ dashboardPage(skin = "purple",
                   
                   tabItem(tabName = "casebysex",
                           fluidPage(
-                            titlePanel("Case by sex"),
+                            titlePanel("Case by Sex"),
                             sidebarLayout(
                               sidebarPanel(
                                 selectInput("region", "Region:",
@@ -121,13 +120,17 @@ dashboardPage(skin = "purple",
                   ),
                   
                   tabItem(tabName = "caseByHDI",
-                          navbarPage("Total Cases and Deaths by HDI and Continent",
-                                     tabPanel("Human Development Index",
+                          navbarPage("Total Cases and Deaths by HDI and Continent   ",
+                                     tabPanel("Human Development Index (HDI)",
                                               fluidRow(
                                                 plotOutput("HDIplot"),
                                                 checkboxGroupInput("continentBox", "Continent:",
                                                                    choices = unique(tidySARSdata$continent),
-                                                                   selected = "Oceania")
+                                                                   selected = "Oceania"),
+                                                box(title = "Human Development Index (HDI)", width = NULL, solidHeader = TRUE, status = "primary",
+                                                    "The Human Development Index is a measure of human development assessed by country as determined by measures for
+                                                    a long and healthy life, education and knowledge, and standard of living. For more information, follow",
+                                                    a("this link to the United Nations Development Programme.", href = "http://hdr.undp.org/en/content/human-development-index-hdi"))
                                               )),
                                      tabPanel("Individual Country Data",
                                               fluidRow(
@@ -137,7 +140,7 @@ dashboardPage(skin = "purple",
                   ),
                   
                   tabItem(tabName = "recoveries",
-                          titlePanel("Recoveries by Region"),
+                          titlePanel("Recovery Rate by Country"),
                           fluidRow(
                             plotOutput("recoveryPlot")
                           )
@@ -146,7 +149,11 @@ dashboardPage(skin = "purple",
                   tabItem(tabName = "dataExplorer",
                           titlePanel("Data Explorer"),
                           fluidPage(
-                            div(dataTableOutput("SARSdataExplorer"), style = "font-size:72%")
+                            div(dataTableOutput("SARSdataExplorer"), style = "font-size:72%"),
+                            box(title = "Source Data",
+                                a("Final Summary Table of SARS Cases by Country (WHO)", 
+                                  href = "https://www.who.int/csr/sars/country/en/country2003_08_15.pdf",
+                                  style = "color:SlateGray;"))
                           )
                   )
                 )

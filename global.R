@@ -80,10 +80,16 @@ tidySARSdata$continent <- c("Oceania", "South America", "North America", "Asia",
 sextidySARSdata <- tidySARSdata %>% 
   gather('female', 'male', 'total', key = "Sex", value = "Incidence")
 
-#dataframe for HDI
+#dataframe for HDI plot
 HDIdataframe <- tidySARSdata %>% 
   select(areas, total, deaths, HDI)
 names(HDIdataframe) <- c("Country", "Total Cases", "Total Deaths", "HDI")
+
+#dataframe for HDI table
+HDIcopyTidySARSdata <- tidySARSdata
+names(HDIcopyTidySARSdata) <- c("Latitude", "Longitude", "Country", "Female", "Male", "Total Cases", "Median Age", "Youngest", "Oldest", "Currently Hospitalizied", 
+                                "Recoveries", "Deaths", "Fatality Rate", "Imported Cases", "Percent Imported", "HCW", "Percent HCW", "First Onset", "Last Onset",
+                                "Human Development Index (HDI)", "HDI Quartile", "continent")
 
 
 #data frame for data explorer
@@ -98,8 +104,13 @@ names(tidyDataExplorer) <- c("Country", "Total Cases", "Female", "Male", "Median
 
 #dataframe for Recoveries
 recoverydata <- tidySARSdata %>%
-  select(areas, casesRecovered, total)
-recoverydata$recoveryrate <- recoverydata$casesRecovered/recoverydata$total
+  select(areas, casesRecovered, total) %>% 
+  mutate(recoveryRate = casesRecovered/total) %>% 
+  arrange(recoveryRate)
+
+#recoverydata$recoveryrate <- recoverydata$casesRecovered/recoverydata$total
+names(recoverydata) <- c("Countries", "casesRecovered", "total", "Recovery Rate")
+
 
 #words for introduction
 #Severe acute respiratory syndrome (SARS)
