@@ -153,7 +153,9 @@ dashboardPage(skin = "purple",
                             box(title = "Source Data",
                                 a("Final Summary Table of SARS Cases by Country (WHO)", 
                                   href = "https://www.who.int/csr/sars/country/en/country2003_08_15.pdf",
-                                  style = "color:SlateGray;"))
+                                  style = "color:SlateGray;")),
+                            br(),
+                            box("Blank boxes indicate missing or unavailable data.")
                           )
                   )
                 )
